@@ -362,6 +362,17 @@
     font-size: 0.95rem;
   }
 
+  .event-title a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--border);
+  }
+
+  .event-title a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
   .event-meta {
     font-size: 0.8rem;
     color: var(--ink-soft);
@@ -568,8 +579,8 @@
       desc: "국내 심장초음파 학술 연구와 진료 표준을 이끄는 대표 학회.",
       url: "https://www.ksecho.org/",
       events: [
-        { title: "제9회 KSE Echo Webinar", start: "2026-08-12", location: "온라인" },
-        { title: "제51회 한국심초음파학회 워크숍", start: "2026-08-22", location: "강동경희대학교병원" }
+        { title: "제9회 KSE Echo Webinar", start: "2026-08-12", location: "온라인", eventUrl: "https://www.ksecho.org/academic_event/annual_schedule_view.php?idx=1086&etc_1=KO" },
+        { title: "제51회 한국심초음파학회 워크숍", start: "2026-08-22", location: "강동경희대학교병원", eventUrl: "https://www.ksecho.org/academic_event/annual_schedule_view.php?idx=1066&etc_1=KO" }
       ]
     },
     {
@@ -587,8 +598,8 @@
       desc: "심장 CT·MRI 등 심장혈관 영상 전반을 다루는 전문 학회.",
       url: "https://www.kosci.co.kr/",
       events: [
-        { title: "대한심장혈관영상의학회 추계학회", start: "2026-10-17", location: "원주(예정)" },
-        { title: "대한심장혈관영상의학회 송년심포지엄", start: "2026-12-19", location: "장소 추후공지" }
+        { title: "대한심장혈관영상의학회 추계학회", start: "2026-10-17", location: "원주(예정)", eventUrl: "https://www.kosci.co.kr/event/schedule/view?idx=254" },
+        { title: "대한심장혈관영상의학회 송년심포지엄", start: "2026-12-19", location: "장소 추후공지", eventUrl: "https://www.kosci.co.kr/event/schedule/view?idx=259" }
       ]
     },
     {
@@ -598,8 +609,8 @@
       desc: "심장·복부·혈관·근골격 등 임상 전 분야 초음파 교육을 아우르는 학술단체.",
       url: "https://www.kacu.or.kr/",
       events: [
-        { title: "제28회 대한임상초음파학회 정기학술대회", start: "2026-07-26", location: "서울 스위스그랜드호텔" },
-        { title: "ISCU 2026 · 제29회 대한임상초음파학회 정기학술대회", start: "2026-12-05", end: "2026-12-06", location: "마곡 코엑스" }
+        { title: "제28회 대한임상초음파학회 정기학술대회", start: "2026-07-26", location: "서울 스위스그랜드호텔", eventUrl: "https://www.kacu.or.kr/2026_con/registration/" },
+        { title: "ISCU 2026 · 제29회 대한임상초음파학회 정기학술대회", start: "2026-12-05", end: "2026-12-06", location: "마곡 코엑스", eventUrl: "https://www.kacu.or.kr/bbs/?code=schedule" }
       ]
     },
     {
@@ -609,7 +620,7 @@
       desc: "‘초음파는 의사의 진찰’을 표방하는 초음파 인증의 제도 운영 학회. 매년 4월 춘계·9월 추계학술대회 개최.",
       url: "https://kmua.co.kr/main/",
       events: [
-        { title: "제16회 한국초음파학회 추계학술대회", start: "2026-09-20", location: "롯데호텔 서울" }
+        { title: "제16회 한국초음파학회 추계학술대회", start: "2026-09-20", location: "롯데호텔 서울", eventUrl: "https://kmua.co.kr/Event/2026_09_20/info.asp" }
       ]
     },
     {
@@ -627,7 +638,7 @@
       desc: "부산 벡스코에서 열리는 영남권 최대 의료기기·병원설비 전시회. 심초음파 장비 업체도 다수 참가.",
       url: "https://www.kimesbusan.com/",
       events: [
-        { title: "KIMES BUSAN 2026 (제14회 부산국제의료기기전시회)", start: "2026-10-23", end: "2026-10-25", location: "벡스코(BEXCO), 부산" }
+        { title: "KIMES BUSAN 2026 (제14회 부산국제의료기기전시회)", start: "2026-10-23", end: "2026-10-25", location: "벡스코(BEXCO), 부산", eventUrl: "https://www.kimesbusan.com/" }
       ]
     }
   ];
@@ -722,7 +733,7 @@
           <span class="event-day">${day}</span>
         </div>
         <div class="event-info">
-          <div class="event-title">${ev.title}</div>
+          <div class="event-title"><a href="${ev.eventUrl || ev.url}" target="_blank" rel="noopener noreferrer">${ev.title}</a></div>
           <div class="event-meta">${ev.org}${ev.location ? " · " + ev.location : ""} · ${dateLabel}</div>
         </div>
         <button class="event-btn" type="button">캘린더에 추가</button>
